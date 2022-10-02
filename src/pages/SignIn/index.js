@@ -31,6 +31,7 @@ const SignIn = () => {
         password: form.password,
       });
       localStorage.setItem('token', req.data.accessToken);
+      console.log(username)
       navagate('/convert');
       return req.data;
     } catch (e) {

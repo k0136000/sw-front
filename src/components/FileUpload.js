@@ -3,6 +3,7 @@ import  Message  from './Message';
 import axios from 'axios'
 import Loading from './Loading/Loading';
 
+
 const FileUpload = () => {
     const [file, setFile] = useState('');
     const [filename, setFilename] = useState('Choose File');
@@ -24,11 +25,11 @@ const FileUpload = () => {
 
             const res = await axios.post('http://52.79.222.1/convert/upload/',formData, {
             });
-            console.log(res.data)
+            
             const { fileName, filePath } =res.data;
-
+            console.log(res.data)
             setUploadedFile({fileName,filePath});
-            console(fileName,filePath)
+            
             setMessage('File Uploaded');
             setLoading(false);
         }catch(err){
