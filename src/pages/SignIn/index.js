@@ -34,7 +34,7 @@ const SignIn = () => {
       navagate('/convert');
       return req.data;
     } catch (e) {
-      if (e.request.status === 400) {
+      if (e.request.status === 401) {
         alert('일치하는 회원이 없습니다.');
       }
       throw new Error(`로그인 에러 ${e}`);

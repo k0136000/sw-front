@@ -69,7 +69,7 @@ const SignUp = () => {
       const req = await axios.post('/http://swmusic.p-e.kr:8080/api/sign-up/user', {
         email: email,
         password: password,
-        username: username,
+        username: username
       });
       alert('회원가입 완료');
       navigate('/');

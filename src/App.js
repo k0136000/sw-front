@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
 import { RecoilRoot } from 'recoil';
 import SignIn from './pages/SignIn';
-import SignUp from './pages/Convert';
+import SignUp from './pages/SignUp';
 import Home from './pages/Home';
 import Convert from './pages/Convert';
 

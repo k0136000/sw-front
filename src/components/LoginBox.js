@@ -20,6 +20,7 @@ const LoginDiv = styled.div`
   border-radius: 20px;
   color: #000000;
   margin-top: 10%;
+
   padding: 30px;
 `;
 

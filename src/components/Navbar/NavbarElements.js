@@ -27,7 +27,7 @@ export const NavLink = styled(Link)`
     border: none;
     outline: none;
     cursor: pointer;
-    font-size: 50px
+    fontSize: 50px
     transition: all 0.2s ease-in-out;
     text-decoration: none;
     &:hover{
