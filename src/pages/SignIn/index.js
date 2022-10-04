@@ -36,7 +36,7 @@ const SignIn = () => {
       })
       //console.log(req.result.data.accessToken);
       console.log(username)
-      navagate('/convert');
+      navagate('/sheet-list');
       return req.data;
     } catch (e) {
       if (e.request.status === 401) {

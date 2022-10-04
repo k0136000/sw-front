@@ -18,71 +18,40 @@
     };
 
     const onChangeTitle = e => {
-      setTitle({
-        ...title,
-        [e.target.name]: e.target.value,
-
-      });
+      setTitle(e.target.value);
     };
 
     const onChangeAuthor = e => {
-      setAuthor({
-        ...author,
-        [e.target.name]: e.target.value,
-      });
+      setAuthor(e.target.value);
     };
 
     const addSheet = async data => {
       data.preventDefault();
       const formData = new FormData();
-      console.log(file);
-      
-      // formData.append('images',JSON.stringify(file));
-      formData.append('images',file);
-      formData.append('writer',author.author);
-      formData.append('title',title.subject);
+      console.log(author);
+      formData.append('title',title);
+      formData.append('writer',author);
+      console.log(formData.get('images'));
+      console.log(formData.get('title'));
+      console.log(formData.get('writer'));
+
       
       const value = [{
         title: title.subject,
         writer: author.author,
       }]
-      
-      const blob = new Blob([JSON.stringify(value)], {type: "application/json"}) 
-      // formData.append("data",blob)
+
       try {
-        console.log(formData)
-        // await axios ({
-        //   method: "POST",
-        //   url: 'http://swmusic.p-e.kr:8080/api/sheetmusics',
-        //   // mode: "cors",
-          
-        //   headers: {
-        //     // Authorization: `Bearer ${localStorage.getItem('login-token')}`,
-        //     Authorization: `Bearer ${localStorage.getItem('token')}`,
-        //     "Content-Type": "multipart/form-data", // Content-Type을 반드시 이렇게 하여야 한다.
-        // },
-        //   body:  formData
-        // })
-
-
-        // const initForm = {
-        //   writer: '',
-        //   title: '',
-        //   images: ''
-        // };
-      
-        // const [form, setForm] = useState(initForm);
-        // const { username, password } = form;
-        
-        // setForm({
-        //   ...form,
-        //   [e.target.name]: e.target.value,
-        // });
-
+        for (let key of formData.values()) {
+          console.log(key);
+        }
         const req = await axios.post(
           'http://swmusic.p-e.kr:8080/api/sheetmusics',
           {
-            formData
+            //formData
+            'title':formData.get('title'),
+            'writer':formData.get('writer'),
+            'images':formData.get('images')
           },
           {
             headers: {
@@ -102,7 +71,7 @@
             console.log('Three was a problem with the server');
             
         } else {
-            console.log(err.msg);
+            console.log(err);
             console.log('파일 업로드 에러. 업로드하실 파일을 다시 확인해주세요.');
             
         }
@@ -116,6 +85,7 @@
           <input
             name='subject'
             type='text'
+            value={title}
             placeholder='여기를 눌러 작성하세요'
             onChange={onChangeTitle}
           ></input>

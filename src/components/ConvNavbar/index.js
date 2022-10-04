@@ -10,13 +10,13 @@ const ConvNavbar = () => {
             </NavLink2>
             <Bars />
             <NavMenu>
-                <NavLink to="/sheet-list" activeStyle>
+                <NavLink to='/sign-in' activeStyle>
                     악보 리스트
                 </NavLink>
                 <NavLink to="/convert" activeStyle>
                     악보 변환
                 </NavLink>
-                <NavLink to="/sheet-regist" activeStyle>
+                <NavLink to='/sign-in' activeStyle>
                     악보 등록
                 </NavLink>
             </NavMenu>
