@@ -1,7 +1,7 @@
 import React from 'react'
 import {Nav,NavLink,NavLink2,Bars,NavMenu,NavBtn,NavBtnLink} from "./NavbarElements";
 import Logo2 from '../Logo2'
-const Navbar = () => {
+const ConvNavbar = () => {
   return (
     <>
         <Nav>
@@ -21,11 +21,11 @@ const Navbar = () => {
                 </NavLink>
             </NavMenu>
             <NavBtn>
-                <NavBtnLink >로그인</NavBtnLink>
+                <NavBtnLink to='/sign-in'>로그인</NavBtnLink>
             </NavBtn>
         </Nav>
     </>
   )
 }
 
-export default Navbar
+export default ConvNavbar

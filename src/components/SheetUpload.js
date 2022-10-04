@@ -2,6 +2,9 @@ import React, { Fragment, useState } from 'react'
 import  Message  from './Message';
 import axios from 'axios'
 import Loading from './Loading/Loading';
+import { Base64 } from 'js-base64';
+import btoa from 'btoa';
+var contentType = require('content-type')
 
 const FileUpload = () => {
     const [file, setFile] = useState('');
@@ -9,6 +12,7 @@ const FileUpload = () => {
     const [uploadedFile, setUploadedFile] = useState({});
     const [message, setMessage] = useState('');
     const [loading,setLoading] = useState(false);
+    const [img,setImg] = useState('');
 
     const onChange = e => {
         setFile(e.target.files[0]);
@@ -67,7 +71,7 @@ const FileUpload = () => {
 
             <input 
                 type="submit" 
-                value="업로드" 
+                value="Upload" 
                 className="btn btn-primary btn-block mt-4" 
             />
         </form>

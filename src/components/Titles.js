@@ -8,6 +8,7 @@ const Titles = ({ width, height, fontSize, isSubmitPossible,fontWeight, isSumbit
       disabled={isSubmitPossible}
       width={width}
       heigh={height}
+      
       fontSize={fontSize}
       fontWeight={fontWeight}
       type={isSumbit ? 'submit' : 'button'}

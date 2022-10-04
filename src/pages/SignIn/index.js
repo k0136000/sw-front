@@ -6,6 +6,7 @@ import styled from '@emotion/styled';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { ContactlessOutlined } from '@mui/icons-material';
 
 const SignIn = () => {
   const navagate = useNavigate();
@@ -29,8 +30,11 @@ const SignIn = () => {
       const req = await axios.post('http://swmusic.p-e.kr:8080/api/sign-in', {
         username: form.username,
         password: form.password,
-      });
-      localStorage.setItem('token', req.data.accessToken);
+      }).then(res=>{
+        console.log(res.data.result.data.accessToken);
+        localStorage.setItem('token', res.data.result.data.accessToken);
+      })
+      //console.log(req.result.data.accessToken);
       console.log(username)
       navagate('/convert');
       return req.data;
