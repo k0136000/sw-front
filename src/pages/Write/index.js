@@ -51,7 +51,7 @@
             //formData
             'title':formData.get('title'),
             'writer':formData.get('writer'),
-            'images':formData.get('images')
+            'pdfs':formData.get('images')
           },
           {
             headers: {

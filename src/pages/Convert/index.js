@@ -16,7 +16,7 @@ const Convert = () => {
   return (
       <MainPageContainer>
         <ConvNavbar />
-        
+ 
         <Content>
           <ContentBox>
             <Titles
@@ -35,6 +35,7 @@ const Convert = () => {
             <FileUpload />
           </ContentBox>
         </Content>
+        
       </MainPageContainer>
   )
 };
@@ -44,11 +45,7 @@ const MainPageContainer = styled.div`
   height: inherit;
   background: #EDEDED;
 `;
-const ButtonBox = styled.div`
-  display: flex;
-  margin-top: 30px;
-  gap: 17px;
-`;
+
 const Content = styled.div`
 width: 100%;
 height: inherit;

@@ -32,11 +32,6 @@ const SheetList = () => {
       console.log('악보 리스트 패치 에러 발생',e)
     }
   };
-  const onFilter = async e => {
-    const data = await fetchAllSheets();
-    console.log(data);
-    // setReviews(data.filter(item => item.category === e.target.value));
-  };
 
   useEffect(() => {
     fetchAllSheets();
@@ -46,17 +41,21 @@ const SheetList = () => {
     <div>
       <Navbar />
       <MainPageContainer>
+
       <ContentBox>
+      
       <Titles
               width='464px'
               height='117px'
               fontSize='70px'
               fontWeight='900'
             >악보 리스트</Titles>
+
       {sheets.map(sheet => (
         <Card
           title={sheet.title}
           body={sheet.writer}
+          sheetId={sheet.musicId}
        />
       ))}
        </ContentBox>
@@ -75,8 +74,11 @@ align-items: center;
 gap: 75px;
 `;
 
+
+
 const MainPageContainer = styled.div`
   width: 100%;
+  
   height: inherit;
   background: #EDEDED;
 `;

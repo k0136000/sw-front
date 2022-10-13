@@ -2,6 +2,7 @@ import React, { Fragment, useState } from 'react'
 import  Message  from './Message';
 import axios from 'axios'
 import Loading from './Loading/Loading';
+import './FileUpload.css'
 
 const FileUpload = () => {
     const [file, setFile] = useState('');

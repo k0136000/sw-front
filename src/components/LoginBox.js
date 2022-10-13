@@ -20,7 +20,6 @@ const LoginDiv = styled.div`
   border-radius: 20px;
   color: #000000;
   margin-top: 10%;
-
   padding: 30px;
 `;
 
@@ -40,6 +39,7 @@ const DefaultEllipse = styled.div`
 const InfoText = styled.p`
   color: #000000;
   font-size: 20px;
+  align-items: center;
   display: inline-block;
   margin-left: 20px;
 `;
@@ -48,7 +48,7 @@ const LoginText = styled.p`
   color: #000000;
   font-size: 15px;
   margin-top: 19px;
-  margin-left: 170px;
+  margin-left: 170px;s
 `;
 
 export default LoginBox;
